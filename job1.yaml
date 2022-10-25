@@ -1,0 +1,5 @@
+jobs:
+  - job:
+    steps:
+    - script: echo Reuse Job 1
+      displayName: 'Job 1'
