@@ -1,0 +1,16 @@
+name: variable reuse
+trigger: none
+pool:
+  vmImage: 'ubuntu-latest'
+variables:
+- template: variable1.yaml
+- template: variable2.yaml
+stages:
+  - stage: variablereuse
+    displayName: variable reuse demo
+    jobs:
+      - job: variablereusejob
+        displayName: variable reuse job
+        steps:
+          - script: echo Variable from Variable1.yaml is $(VariableOne).
+          - script: echo Variable from Variable2.yaml is $(VariableTwo).
